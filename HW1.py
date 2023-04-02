@@ -44,3 +44,36 @@ plt.scatter(X, Y, label='Data')
 plt.plot(X, model(c_opt, X), 'r-', label='Fit')
 plt.legend()
 plt.show()
+
+#II Parameter Sweeps
+
+#parameters to sweep through
+Aval = np.linspace(0, 10, 100)
+Bval = np.linspace(0, 5, 100)
+Cval = np.linspace(0, 10, 100)
+Dval = np.linspace(0, 10, 20)
+
+#fix B and D, sweep through A and C
+loss_grid = np.zeros((len(Bval), len(Dval)))
+
+for i, B in enumerate(Bval):
+    for j, D in enumerate(Dval):
+        #unreasonably large start
+        min_loss = 1212423234
+
+        #sweep A and C
+        for A in Aval:
+            for C in Cval:
+                loss = loss_func([A, B, C, D], X, Y)
+                if loss < min_loss : 
+                    min_loss = loss
+        #store the minimum loss value for the given combination of B and D fixed
+        loss_grid[i,j] = min_loss
+
+plt.figure(figsize=(8,6))
+plt.pcolor(Dval, Bval, loss_grid, cmap='viridis')
+plt.colorbar(label='Loss')
+plt.xlabel('D')
+plt.ylabel('B')
+plt.title('Loss Landscape')
+plt.show()
