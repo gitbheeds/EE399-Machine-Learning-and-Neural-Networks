@@ -48,32 +48,27 @@ plt.show()
 #II Parameter Sweeps
 
 #parameters to sweep through
-Aval = np.linspace(0, 10, 100)
-Bval = np.linspace(0, 5, 100)
-Cval = np.linspace(0, 10, 100)
-Dval = np.linspace(0, 10, 20)
+Aval = np.linspace(0, 10, 2000)
+Bval = np.linspace(0, 5, 2000)
+Cval = np.linspace(0, 10, 2000)
+Dval = np.linspace(0, 30, 2000)
 
 #fix B and D, sweep through A and C
-loss_grid = np.zeros((len(Bval), len(Dval)))
+loss_grid = np.zeros((len(Aval), len(Cval)))
 
-for i, B in enumerate(Bval):
-    for j, D in enumerate(Dval):
-        #unreasonably large start
-        min_loss = 1212423234
-
-        #sweep A and C
-        for A in Aval:
-            for C in Cval:
-                loss = loss_func([A, B, C, D], X, Y)
-                if loss < min_loss : 
-                    min_loss = loss
-        #store the minimum loss value for the given combination of B and D fixed
+#sweep A and C
+min_loss = np.inf
+for i, A in enumerate(Aval):
+    for j, C in enumerate(Cval):
+        loss = loss_func([A, c_opt[2], C, c_opt[3]], X, Y)
+        if loss < min_loss :
+            min_loss = loss
+#store the loss value for the given combination of A and C sweeps
         loss_grid[i,j] = min_loss
-
 plt.figure(figsize=(8,6))
-plt.pcolor(Dval, Bval, loss_grid, cmap='viridis')
+plt.pcolor(Aval, Cval, loss_grid, cmap='viridis')
 plt.colorbar(label='Loss')
-plt.xlabel('D')
-plt.ylabel('B')
+plt.xlabel('A')
+plt.ylabel('C')
 plt.title('Loss Landscape')
 plt.show()
