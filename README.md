@@ -1,7 +1,7 @@
 # EE399-Work
 Storage for EE399 HW
 ## Table of Contents
-
+- [HW 1 Writeup](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
 ### Abstract:
