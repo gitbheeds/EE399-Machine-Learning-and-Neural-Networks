@@ -1,7 +1,6 @@
 # EE399-Work
 Storage for EE399 HW
-## Table of Contents (to be added later)
-
+## Table of Contents
 
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
