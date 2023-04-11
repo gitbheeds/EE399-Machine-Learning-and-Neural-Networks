@@ -123,7 +123,7 @@ It's likely that the polynomial fits the training data well, but ends up overfit
 polynomials. 
 
 #### Evaluation of Other Models using Training/Test Set 2
-Training Data Set 2 used the first and last 10 points of the intial data, and Test Data Set 2 used the 10 points in the middle. 
+Training Data Set 2 used the first and last 10 points of the intial data, and Test Data Set 2 used the 10 points in the middle.  
 ![TDS2 results](https://user-images.githubusercontent.com/87102849/231062291-c907e787-b65d-483b-93aa-e18294265e28.png)  
 This training/test set performed worse on both data sets than set 1. This can be explained by a couple of factors. First, because
 the data set has relatively positive correlation, there is a large difference between the first and last 10 datapoints. This means
