@@ -142,17 +142,17 @@ This homework required us to develop and analyze different models for machine le
 
 
 
-##HW2 Writeup: Correlation Matricies and SVD
+## HW2 Writeup: Correlation Matricies and SVD
 
-###Abstract:  
+### Abstract:  
 This homework focused on 
 
-###Section 1: Overview
+### Section 1: Overview
 
-###Section 2: Background and Important Concepts
+### Section 2: Background and Important Concepts
 
-###Section 3: Development and Implementation of Algorithms
+### Section 3: Development and Implementation of Algorithms
 
-###Section 4: Results
+### Section 4: Results
 
-###Section 5: Conclusion
+### Section 5: Conclusion
