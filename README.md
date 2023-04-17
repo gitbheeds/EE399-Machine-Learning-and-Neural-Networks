@@ -138,3 +138,21 @@ Interestingly, the polynomial performs better on the test set than the training 
 
 ### Section 5: Conclusion
 This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.
+
+
+
+
+##HW2 Writeup: Correlation Matricies and SVD
+
+###Abstract:  
+This homework focused on 
+
+###Section 1: Overview
+
+###Section 2: Background and Important Concepts
+
+###Section 3: Development and Implementation of Algorithms
+
+###Section 4: Results
+
+###Section 5: Conclusion
