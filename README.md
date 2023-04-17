@@ -8,6 +8,13 @@ Storage for EE399 HW
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
+- [HW 2 Writeup](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
+  - [Abstract](https://github.com/gitbheeds/EE399-Work#abstract-1)
+  - [Overview](https://github.com/gitbheeds/EE399-Work#section-1-overview-1)
+  - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work#section-2-background-and-important-concepts-1)
+  - [Development and Implementation of Algorithms](https://github.com/gitbheeds/EE399-Work#section-3-development-and-implementation-of-algorithms)
+  - [Results](https://github.com/gitbheeds/EE399-Work#section-4-results-1)
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work#section-5-conclusion-1)
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
 ### Abstract:
@@ -138,3 +145,21 @@ Interestingly, the polynomial performs better on the test set than the training 
 
 ### Section 5: Conclusion
 This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.
+
+
+
+
+## HW2 Writeup: Correlation Matricies and SVD
+
+### Abstract:  
+This homework focused on 
+
+### Section 1: Overview
+
+### Section 2: Background and Important Concepts
+
+### Section 3: Development and Implementation of Algorithms
+
+### Section 4: Results
+
+### Section 5: Conclusion
