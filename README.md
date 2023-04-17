@@ -152,9 +152,15 @@ This homework required us to develop and analyze different models for machine le
 ## HW2 Writeup: Correlation Matricies and SVD
 
 ### Abstract:  
-This homework focused on the yalefaces data set, containing 9 different faces with about 65 lighting scenes for each face (2414 faces in all). We analyzed this data using both correlation matricies and SVD. We compute correlation matricies for small samples of the data set, 100 faces and then 10 faces. We will then compare the results of the correlation matrix of the entire data set against the SVD for the entire data set. We will use the norm of difference between the normalized eigenvectors of the correlation matrix and the first 6 principal component directions of the SVD. 
+This homework focused on the yalefaces data set, containing 9 different faces with about 65 lighting scenes for each face (2414 faces in all). We analyzed this data using both correlation matricies and SVD. We compute correlation matricies for small samples of the data set, 100 faces and then 10 faces. We will then compare the results of the correlation matrix of the entire data set against the SVD for the entire data set. We will use the norm of difference between the normalized eigenvectors of the correlation matrix and the first 6 principal component directions of the SVD. We will also plot the first 6 SVD modes and compare their percent variance from the original data. 
 
 ### Section 1: Overview
+First, we will compute a correlation matrix for the first 100 images in the yalefaces dataset, and plot the matrix with `plt.pcolor()`. Using this matrix, we will then plot the faces that are most correlated and the faces that are the least correlated.  
+Then, we will compute another correlation matrix, but this time for 10 images throughout the data set. We will use images 1, 313, 512, 5, 2400, 113, 1024, 87, 314, 2005. We will then plot this correlation matrix in the same fashion as above.  
+Next, we will turn our attention to the entire yalefaces data set. We'll create a correlation matrix for the dataset, and then find the six eigenvectors with the largest magnitude eigenvalues. We'll then normalize the eigenvectors so we can compare it against the SVD.  
+We will then perform SVD on the dataset and find the first six principal component directions.   
+Now, we can compare the first eigenvector with the first prinicipal component direction using the norm of difference.  
+Finally, we will compute the percentage of variance of each of the 6 SVD modes to the original data set. 
 
 ### Section 2: Background and Important Concepts
 
