@@ -1,14 +1,14 @@
 # EE399-Work
 Storage for EE399 HW
 ## Table of Contents
-- [HW 1 Writeup](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
+- [HW 1 Writeup: Curve Fitting with Least Square Error](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract)
   - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts)
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
-- [HW 2 Writeup](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
+- [HW2 Writeup: Correlation Matricies and SVD](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
   - [Abstract](https://github.com/gitbheeds/EE399-Work#abstract-1)
   - [Overview](https://github.com/gitbheeds/EE399-Work#section-1-overview-1)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work#section-2-background-and-important-concepts-1)
@@ -152,7 +152,7 @@ This homework required us to develop and analyze different models for machine le
 ## HW2 Writeup: Correlation Matricies and SVD
 
 ### Abstract:  
-This homework focused on 
+This homework focused on the yalefaces data set, containing 9 different faces with about 65 lighting scenes for each face (2414 faces in all). We analyzed this data using both correlation matricies and SVD. We compute correlation matricies for small samples of the data set, 100 faces and then 10 faces. We will then compare the results of the correlation matrix of the entire data set against the SVD for the entire data set. We will use the norm of difference between the normalized eigenvectors of the correlation matrix and the first 6 principal component directions of the SVD. 
 
 ### Section 1: Overview
 
