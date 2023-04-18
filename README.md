@@ -7,7 +7,7 @@ Storage for EE399 HW
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts)
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
-  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion)
 - [HW2 Writeup: Correlation Matricies and SVD](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
   - [Abstract](https://github.com/gitbheeds/EE399-Work#abstract-1)
   - [Overview](https://github.com/gitbheeds/EE399-Work#section-1-overview-1)
