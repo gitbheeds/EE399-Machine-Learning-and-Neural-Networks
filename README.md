@@ -213,14 +213,5 @@ The norm of difference was calculated between the first eigenvector and the firs
 Finally, we computed the percentage of variance of the 6 SVD modes to the dataset. This was done by comparing the sum of squares of projections onto each SVD mode against the sum of squares of the original dataset. The 6 modes are pictured below, indicating each mode's variance from the dataset. We can see that each successive mode is more and more accurate, with less percent variance.  
 ![SVD faces](https://user-images.githubusercontent.com/87102849/232678622-2e4d6ecb-1775-42ad-96c0-f6eeb33264f0.png)
 
-
-
-
-
-
-
-
-
-
-
 ### Section 5: Conclusion
+This homework focused on understanding the SVD, a powerful, easy to implement technique, and seeing how it compares to other methods of analysis. SVD will definitely be even better in higher dimension problems.  
