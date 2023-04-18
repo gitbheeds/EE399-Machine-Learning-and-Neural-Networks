@@ -174,6 +174,16 @@ The modes of SVD refer to the three matrices obtained during the SVD of a matrix
 
 ### Section 3: Development and Implementation of Algorithms
 
+#### Correlation Matrix:
+Correlation matricies were implemented using `np.dot()` We calculated the dot product of a sample set of yalefaces and its transpose. This lets us compare faces to each other in the data set. The matrix was then displayed with a heatmap, generated using `plt.pcolor()` An implementation is shown below:  
+![cor_mat example](https://user-images.githubusercontent.com/87102849/232674536-e108d494-c932-4b20-8690-2fae848382a7.png)  
+
+#### SVD: 
+The SVD was simply implemented using the numpy linear algebra package. The modes of the SVD were then extracted from the transpose of V. An example is shown below:  
+
+![svd-implementation](https://user-images.githubusercontent.com/87102849/232675018-6589e8fc-90eb-4354-b808-87b31d6a471b.png)
+
+
 ### Section 4: Results
 
 ### Section 5: Conclusion
