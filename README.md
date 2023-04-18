@@ -165,7 +165,10 @@ Finally, we will compute the percentage of variance of each of the 6 SVD modes t
 ### Section 2: Background and Important Concepts
 
 #### Correlation Matrix: 
-A correlation matrix is used to see how well a dataset maps to another parameter. In this case, we are comparing yalefaces to itself to see which faces are the most similar. There are many metrics to use to determine correlation, but in this case we use a dot product to compare how each face correlates to other faces. Correlation matrices are commonly used in data analysis and machine learning to identify patterns and relationships between variables. Making a heatmap from a correlation matrix is a good way of visualizing the data. 
+A correlation matrix is used to see how well a dataset maps to another parameter. In this case, we are comparing yalefaces to itself to see which faces are the most similar. There are many metrics to use to determine correlation, but in this case we use a dot product to compare how each face correlates to other faces. Correlation matrices are commonly used in data analysis and machine learning to identify patterns and relationships between variables. Making a heatmap from a correlation matrix is a good way of visualizing the data.  
+
+#### Eigenvectors and Eigenvalues:
+An eigenvector is a nonzero vector that, when multiplied by a matrix, results in a scalar multiple of itself. That is, if A is a matrix and v is an eigenvector of A, then Av = λv, where λ is a scalar known as the eigenvalue associated with v. In other words, the action of A on v is simply to scale v by a certain amount λ.
 
 #### Singular Value Decomposition:  
 Singular Value Decomposition (SVD) is a matrix factorization technique that decomposes a matrix into three matrices: U, Σ, and V. The U matrix contains the left singular vectors, which represent the contribution of each original variable to the new feature space. The Σ matrix contains the singular values, which represent the strength of each feature in the new feature space. The V matrix contains the right singular vectors, which represent the contribution of each observation to the new feature space. Together, the three matrices allow for the identification of the most important features in a dataset and the reduction of the dimensionality of the dataset without losing important information. SVD has a wide range of applications in data analysis and machine learning, including dimensionality reduction, data compression, and noise reduction.  
@@ -185,5 +188,39 @@ The SVD was simply implemented using the numpy linear algebra package. The modes
 
 
 ### Section 4: Results
+
+First, a correlation matrix was created for the first 100 images in yalefaces. The heatmap of this matrix is shown below:  
+
+![correlation matrix](https://user-images.githubusercontent.com/87102849/232675541-1fa92018-4340-4c42-bf8d-282f67c1e83c.png)  
+
+Then, we found the most and least correlated images by finding the highest and lowest values in the correlation matrix, taking note of what row and column indices were tagged. These images were then plotted side by side, as shown below:  
+
+![face correlations](https://user-images.githubusercontent.com/87102849/232676163-a1486556-3609-4945-8bff-4b68918ed365.png)  
+
+Next, we narrowed our focus to 10 specific images in the data set, and created a small correlation matrix for this sample, the heatmap of which is shown below:  
+![10x10 correlation matrix](https://user-images.githubusercontent.com/87102849/232676395-fe0d2413-1e05-423d-9878-dfd640a684a3.png)
+
+For the final portion of the assignment, we turned our attention to the full dataset, first finding a correlation matrix for it, then calculating the eigenvectors and eigenvalues of the matrix. The eigenvectors were then sorted in descending order of the magnitude of their eigenvalues. These were normalized, and printed to the console:  
+![eigvecs](https://user-images.githubusercontent.com/87102849/232677836-1fd53524-306c-44b2-8112-a85870e879b0.png)  
+
+These will be compared to the first six SVD principal component directions (modes), using a norm of difference. The 6 SVD principal component directions were found as follows:  
+
+![pcds](https://user-images.githubusercontent.com/87102849/232678041-e1f68083-afe2-4b66-97a2-956de3dfffee.png)  
+
+The norm of difference was calculated between the first eigenvector and the first principal component direction and is shown below. Note that the difference is neglibible.  
+![n_o_d](https://user-images.githubusercontent.com/87102849/232678234-237e8998-32c0-4654-b9bf-58df606eb672.png)  
+
+Finally, we computed the percentage of variance of the 6 SVD modes to the dataset. This was done by comparing the sum of squares of projections onto each SVD mode against the sum of squares of the original dataset. The 6 modes are pictured below, indicating each mode's variance from the dataset. We can see that each successive mode is more and more accurate, with less percent variance.  
+![SVD faces](https://user-images.githubusercontent.com/87102849/232678622-2e4d6ecb-1775-42ad-96c0-f6eeb33264f0.png)
+
+
+
+
+
+
+
+
+
+
 
 ### Section 5: Conclusion
