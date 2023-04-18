@@ -144,7 +144,8 @@ Interestingly, the polynomial performs better on the test set than the training 
 
 
 ### Section 5: Conclusion
-This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.
+This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.  
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
 
 
 
@@ -215,3 +216,6 @@ Finally, we computed the percentage of variance of the 6 SVD modes to the datase
 
 ### Section 5: Conclusion
 This homework focused on understanding the SVD, a powerful, easy to implement technique, and seeing how it compares to other methods of analysis. SVD will definitely be even better in higher dimension problems.  
+
+
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
