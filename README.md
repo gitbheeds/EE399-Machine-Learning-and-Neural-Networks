@@ -1,14 +1,14 @@
 # EE399-Work
 Storage for EE399 HW
 ## Table of Contents
-- [HW 1 Writeup](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
+- [HW 1 Writeup: Curve Fitting with Least Square Error](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract)
   - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts)
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
-  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results)
-- [HW 2 Writeup](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion)
+- [HW2 Writeup: Correlation Matricies and SVD](https://github.com/gitbheeds/EE399-Work#hw2-writeup-correlation-matricies-and-svd)
   - [Abstract](https://github.com/gitbheeds/EE399-Work#abstract-1)
   - [Overview](https://github.com/gitbheeds/EE399-Work#section-1-overview-1)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work#section-2-background-and-important-concepts-1)
@@ -144,7 +144,8 @@ Interestingly, the polynomial performs better on the test set than the training 
 
 
 ### Section 5: Conclusion
-This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.
+This homework required us to develop and analyze different models for machine learning, and provided good practice into simple optimization techniques.  
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
 
 
 
@@ -152,14 +153,69 @@ This homework required us to develop and analyze different models for machine le
 ## HW2 Writeup: Correlation Matricies and SVD
 
 ### Abstract:  
-This homework focused on 
+This homework focused on the yalefaces data set, containing 9 different faces with about 65 lighting scenes for each face (2414 faces in all). We analyzed this data using both correlation matricies and SVD. We compute correlation matricies for small samples of the data set, 100 faces and then 10 faces. We will then compare the results of the correlation matrix of the entire data set against the SVD for the entire data set. We will use the norm of difference between the normalized eigenvectors of the correlation matrix and the first 6 principal component directions of the SVD. We will also plot the first 6 SVD modes and compare their percent variance from the original data. 
 
 ### Section 1: Overview
+First, we will compute a correlation matrix for the first 100 images in the yalefaces dataset, and plot the matrix with `plt.pcolor()`. Using this matrix, we will then plot the faces that are most correlated and the faces that are the least correlated.  
+Then, we will compute another correlation matrix, but this time for 10 images throughout the data set. We will use images 1, 313, 512, 5, 2400, 113, 1024, 87, 314, 2005. We will then plot this correlation matrix in the same fashion as above.  
+Next, we will turn our attention to the entire yalefaces data set. We'll create a correlation matrix for the dataset, and then find the six eigenvectors with the largest magnitude eigenvalues. We'll then normalize the eigenvectors so we can compare it against the SVD.  
+We will then perform SVD on the dataset and find the first six principal component directions.   
+Now, we can compare the first eigenvector with the first prinicipal component direction using the norm of difference.  
+Finally, we will compute the percentage of variance of each of the 6 SVD modes to the original data set. 
 
 ### Section 2: Background and Important Concepts
 
+#### Correlation Matrix: 
+A correlation matrix is used to see how well a dataset maps to another parameter. In this case, we are comparing yalefaces to itself to see which faces are the most similar. There are many metrics to use to determine correlation, but in this case we use a dot product to compare how each face correlates to other faces. Correlation matrices are commonly used in data analysis and machine learning to identify patterns and relationships between variables. Making a heatmap from a correlation matrix is a good way of visualizing the data.  
+
+#### Eigenvectors and Eigenvalues:
+An eigenvector is a nonzero vector that, when multiplied by a matrix, results in a scalar multiple of itself. That is, if A is a matrix and v is an eigenvector of A, then Av = λv, where λ is a scalar known as the eigenvalue associated with v. In other words, the action of A on v is simply to scale v by a certain amount λ.
+
+#### Singular Value Decomposition:  
+Singular Value Decomposition (SVD) is a matrix factorization technique that decomposes a matrix into three matrices: U, Σ, and V. The U matrix contains the left singular vectors, which represent the contribution of each original variable to the new feature space. The Σ matrix contains the singular values, which represent the strength of each feature in the new feature space. The V matrix contains the right singular vectors, which represent the contribution of each observation to the new feature space. Together, the three matrices allow for the identification of the most important features in a dataset and the reduction of the dimensionality of the dataset without losing important information. SVD has a wide range of applications in data analysis and machine learning, including dimensionality reduction, data compression, and noise reduction.  
+
+The modes of SVD refer to the three matrices obtained during the SVD of a matrix. The left singular vectors (U) represent the original variables, the singular values (Σ) represent the strength of each feature, and the right singular vectors (V) represent the observations. The modes are used to transform the original matrix into a new feature space, where each feature is a linear combination of the original variables, and each observation is a linear combination of the new features. The first column of U and V and the first singular value represent the most important feature, and they are ordered by decreasing importance. The SVD is a powerful tool for data analysis and machine learning because it allows for the identification of the most important features in a dataset and the reduction of the dimensionality of the dataset without losing important information.
+
 ### Section 3: Development and Implementation of Algorithms
+
+#### Correlation Matrix:
+Correlation matricies were implemented using `np.dot()` We calculated the dot product of a sample set of yalefaces and its transpose. This lets us compare faces to each other in the data set. The matrix was then displayed with a heatmap, generated using `plt.pcolor()` An implementation is shown below:  
+![cor_mat example](https://user-images.githubusercontent.com/87102849/232674536-e108d494-c932-4b20-8690-2fae848382a7.png)  
+
+#### SVD: 
+The SVD was simply implemented using the numpy linear algebra package. The modes of the SVD were then extracted from the transpose of V. An example is shown below:  
+
+![svd-implementation](https://user-images.githubusercontent.com/87102849/232675018-6589e8fc-90eb-4354-b808-87b31d6a471b.png)
+
 
 ### Section 4: Results
 
+First, a correlation matrix was created for the first 100 images in yalefaces. The heatmap of this matrix is shown below:  
+
+![correlation matrix](https://user-images.githubusercontent.com/87102849/232675541-1fa92018-4340-4c42-bf8d-282f67c1e83c.png)  
+
+Then, we found the most and least correlated images by finding the highest and lowest values in the correlation matrix, taking note of what row and column indices were tagged. These images were then plotted side by side, as shown below:  
+
+![face correlations](https://user-images.githubusercontent.com/87102849/232676163-a1486556-3609-4945-8bff-4b68918ed365.png)  
+
+Next, we narrowed our focus to 10 specific images in the data set, and created a small correlation matrix for this sample, the heatmap of which is shown below:  
+![10x10 correlation matrix](https://user-images.githubusercontent.com/87102849/232676395-fe0d2413-1e05-423d-9878-dfd640a684a3.png)
+
+For the final portion of the assignment, we turned our attention to the full dataset, first finding a correlation matrix for it, then calculating the eigenvectors and eigenvalues of the matrix. The eigenvectors were then sorted in descending order of the magnitude of their eigenvalues. These were normalized, and printed to the console:  
+![eigvecs](https://user-images.githubusercontent.com/87102849/232677836-1fd53524-306c-44b2-8112-a85870e879b0.png)  
+
+These will be compared to the first six SVD principal component directions (modes), using a norm of difference. The 6 SVD principal component directions were found as follows:  
+
+![pcds](https://user-images.githubusercontent.com/87102849/232678041-e1f68083-afe2-4b66-97a2-956de3dfffee.png)  
+
+The norm of difference was calculated between the first eigenvector and the first principal component direction and is shown below. Note that the difference is neglibible.  
+![n_o_d](https://user-images.githubusercontent.com/87102849/232678234-237e8998-32c0-4654-b9bf-58df606eb672.png)  
+
+Finally, we computed the percentage of variance of the 6 SVD modes to the dataset. This was done by comparing the sum of squares of projections onto each SVD mode against the sum of squares of the original dataset. The 6 modes are pictured below, indicating each mode's variance from the dataset. We can see that each successive mode is more and more accurate, with less percent variance.  
+![SVD faces](https://user-images.githubusercontent.com/87102849/232678622-2e4d6ecb-1775-42ad-96c0-f6eeb33264f0.png)
+
 ### Section 5: Conclusion
+This homework focused on understanding the SVD, a powerful, easy to implement technique, and seeing how it compares to other methods of analysis. SVD will definitely be even better in higher dimension problems.  
+
+
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
