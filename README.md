@@ -15,21 +15,13 @@ Storage for EE399 HW
   - [Development and Implementation of Algorithms](https://github.com/gitbheeds/EE399-Work#section-3-development-and-implementation-of-algorithms)
   - [Results](https://github.com/gitbheeds/EE399-Work#section-4-results-1)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work#section-5-conclusion-1)
-- [HW3 Writeup: Classification of Digits in the MNIST_784 Dataset Using Several Supervised Machine Learning Algorithms](https://github.com/gitbheeds/EE399-Work/main/README.md#hw3-writeup-classification-of-digits-in-the-mnist_784-dataset-using-several-supervised-machine-learning-algorithms)  
-
-  -[Abstract]()  
-  
-  -[Overview]()  
-  
-  -[Background and Important Concepts]()  
-  
-  -[Development and Implementation of Algorithms]()  
-  
-  -[Results]()  
-  
-  -[Conclusion]()  
-  
-    
+- [HW3 Writeup: Classification of Digits in the MNIST_784 Dataset Using Several Supervised Machine Learning Algorithms]()  
+  - Abstract  
+  - Overview  
+  - Background and Important Concepts  
+  - Development and Implementation of Functions and Algorithms  
+  - Results  
+  - Conclusion  
     
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
