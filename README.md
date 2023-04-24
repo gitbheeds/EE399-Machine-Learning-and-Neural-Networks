@@ -20,7 +20,7 @@ Storage for EE399 HW
   - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-2)  
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-2)  
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms-1)  
-  - Results  
+  - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-2)  
   - Conclusion  
     
 ## HW1 Writeup: Curve Fitting with Least Square Error
