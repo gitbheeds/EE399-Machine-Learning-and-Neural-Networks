@@ -16,7 +16,7 @@ Storage for EE399 HW
   - [Results](https://github.com/gitbheeds/EE399-Work#section-4-results-1)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work#section-5-conclusion-1)
 - [HW3 Writeup: Classification of Digits in the MNIST_784 Dataset Using Several Supervised Machine Learning Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw3-writeup-classification-of-digits-in-the-mnist_784-dataset-using-several-supervised-machine-learning-algorithms)  
-  - [Abstract]()  
+  - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-2)  
   - Overview  
   - Background and Important Concepts  
   - Development and Implementation of Functions and Algorithms  
@@ -259,5 +259,97 @@ A linear classifier is a type of machine learning algorithm used for binary or m
 
 In a binary classification problem, a linear classifier would draw a line to separate the two classes, while in a multi-class problem, it would draw a hyperplane that separates the data into different regions for each class. The location of the boundary or hyperplane is determined during the training phase by optimizing a specific objective function, such as maximizing the margin between the classes or minimizing the classification error.
 
-Once the linear classifier is trained, it can be used to predict the class of new, unseen data by evaluating which side of the boundary or hyperplane it falls on. Linear classifiers can be fast and efficient to train and can work well in low-dimensional feature spaces. However, they may not be effective in more complex data spaces or when the classes are not linearly separable. In these cases, non-linear classifiers such as neural networks or decision trees may be more appropriate.
+##### Linear Discriminant Analysis: 
+Linear discriminant analysis (LDA) is a popular technique used in linear classification to find the best linear boundary that separates different classes of data. LDA is a supervised learning algorithm that works by projecting the data onto a lower-dimensional space while maximizing the separability between the classes.
+
+The goal of LDA is to find a set of features, also known as discriminants, that can effectively separate the classes. The discriminants are obtained by maximizing a criterion function, such as Fisher's linear discriminant, that captures the differences between the means of the classes while minimizing the within-class scatter.
+
+Once the discriminants are obtained, new, unseen data can be projected onto the same lower-dimensional space, and the class label can be assigned based on which side of the decision boundary it falls on.
+
+One of the strengths of LDA is that it is a simple and efficient algorithm that can work well even when the number of features is larger than the number of samples. LDA also has the ability to handle more than two classes, making it useful for multi-class classification problems.
+
+However, LDA assumes that the data follows a Gaussian distribution and that the classes have equal covariance matrices. In practice, these assumptions may not always hold, and other techniques, such as support vector machines, may be more suitable. Once the linear classifier is trained, it can be used to predict the class of new, unseen data by evaluating which side of the boundary or hyperplane it falls on. Linear classifiers can be fast and efficient to train and can work well in low-dimensional feature spaces. However, they may not be effective in more complex data spaces or when the classes are not linearly separable. In these cases, non-linear classifiers such as neural networks or decision trees may be more appropriate. This is something that will be covered in the results section. 
+
+
+#### Support Vector Machine:  
+Support Vector Machines (SVMs) are a popular and powerful class of supervised machine learning algorithms that can be used for both classification and regression tasks. SVMs work by finding the best possible boundary or hyperplane that separates different classes of data in a high-dimensional feature space.
+
+In a binary classification problem, SVMs aim to find a hyperplane that maximizes the margin between the two classes, i.e., the distance between the hyperplane and the closest data points of each class. This hyperplane is then used to classify new, unseen data based on which side of the boundary it falls on. SVMs are particularly useful in cases where the data is not linearly separable by transforming the original feature space into a higher-dimensional space where a hyperplane can be found.
+
+The process of finding the best hyperplane is done by solving a mathematical optimization problem that involves maximizing the margin while also minimizing the classification error. The SVM algorithm achieves this by using a subset of the training data, known as support vectors, to determine the hyperplane.
+
+One of the strengths of SVMs is that they can work well even in cases where there is noise in the data or when the classes are not well-separated. SVMs also have the ability to handle both linear and nonlinear data using a kernel trick, which maps the data into a higher-dimensional space, where the classes may become separable.
+
+SVMs are widely used in various applications, including text classification, image classification, and bioinformatics. However, SVMs can be computationally intensive, especially for large datasets with many features, and the choice of kernel and hyperparameters can significantly impact the performance of the algorithm.  
+
+#### Decision Tree: 
+Decision trees are a type of supervised machine learning algorithm used for classification and regression tasks. Decision trees work by recursively partitioning the feature space into smaller and smaller regions, based on the values of the input features, until each region contains a single class or a regression value.
+
+The process of building a decision tree involves selecting the best feature at each node that can most effectively split the data into subsets with the highest possible purity. The purity of a subset is determined by measuring the homogeneity of the classes or values in that subset. Popular impurity measures include Gini index, entropy, and classification error.
+
+The tree is grown recursively by splitting the data at each node based on the selected feature until a stopping criterion is met, such as reaching a maximum depth or minimum number of data points in a leaf node. Once the decision tree is trained, it can be used to predict the class or regression value of new, unseen data by traversing the tree from the root node to a leaf node.
+
+One of the strengths of decision trees is that they are easy to interpret and can be visualized, making them useful for exploratory data analysis and understanding the relationship between the input features and the target variable. Decision trees are also robust to noisy data and can handle both categorical and numerical features.
+
+However, decision trees can suffer from overfitting, where the tree becomes too complex and fits the training data too well, resulting in poor performance on new data. Various techniques, such as pruning, regularization, and ensemble methods, can be used to address this issue.
+
+### Section 3: Development and Implementation of Functions and Algorithms:
+
+Most of the algorithms are implemented using `sklearn` library in Python. This library is full of useful features for machine learning algorithms. We will also be using this library for generating training and test data, as well as calculating accuracy, and fitting algorithms. Implementation of the SVD was done using `np.linalg.svd` Full matricies were disabled in order to save memory. Otherwise the SVD matricies require too large a memory allocation to run on most personal machines. To determine the number of modes needed to reconstruct the images from the dataset with a given fidelity threshold, a sum of squares average was computed to determine how many modes were needed. A threshold of 90% fidelity was deemed as sufficient reconstruction.   
+
+- `train_test_split()`: This function, provided by `sklearn.model_selection`, takes in arrays and generates training and test sets from these arrays. The `test_size` parameter determines what percentage of the data will be reserved for testing data. The `random_state` parameter selects a random seed, and picks training and test data based on this seed. This ensures psuedo-randomized data in both test and train data.  
+- `LinearDiscriminantAnalysis()`: This function provided by `sklearn.discriminant_analysis` handles all the training and accuracy scoring of the linear classifier. This model, as it is named, uses LDA to compute the classification.  
+- `SVC()`: This function from `sklearn.svm` creates a Support Vector Classifier, and handles all the training and accuracy scoring of the SVC. 
+- `DecisionTreeClassifier()`: This function provided by `sklearn.tree` generates a Decision Tree Classifier, and contains methods for training and scoring the tree.  
+
+A sample of a classifier instantiation is shown below.  
+![sample code](https://user-images.githubusercontent.com/87102849/233878214-e4ac709b-a0a9-4ad7-8c21-37d254894f03.png)  
+
+### Section 4: Results
+#### Singular Value Spectrum  
+The singular value spectrum for the MNIST dataset can be seen below. It is apparent that there is a steep dropoff in the contribuition of a given principal component to the image in the dataset. While this value is hard to see in the graph, the threshold for 90% image reconstruction is calculated and listed below the graph. This point is just after the elbow in the graph.  
+![singular value spectrum](https://user-images.githubusercontent.com/87102849/233879105-be7c985a-c986-4361-9471-75347b4451f1.png)  
+
+#### Projection of MNIST onto Three V-modes:
+The MNIST data was projected onto **V**-modes 2, 3, and 5. These are relatively important modes, as indicated by the Singular Value Spectrum. The data was colored by digit label, and graphed onto a 3D subspace. Here, we can see how each mode contributes to each digit in the dataset. Note that the hole in the middle of the dataset corresponds to approximately zero contribution of the mode to a digit. This is hard to imagine for 3 highly relevant modes. Different versions of Python apparently graph the same data in a different order, so running the provided code may result in a moderately different shape.  
+![projection of MNIST](https://user-images.githubusercontent.com/87102849/233879675-8ddc9844-af27-4466-9a7e-5345a5134380.png)  
+
+#### Linear Classifier for Digits 1 and 5  
+The linear classifier was trained to separate digits 1 and 5. The values were first binned, and then separated using `train_test_split()`. Accuracies were reported as follows.  
+- Training Set Accuracy: 99.15%  
+- Test Set Accuracy: 98.80%
+
+As we can see, the linear classifier did very well separating these two digits.  
+
+#### Linear Classifier for Digits 1, 5, and 7
+To increase the workload on the classifier, it was then asked to separate digits 1, 5, and 7. 7 was chosen since it commonly can bear some resemblance to the number 1 in most handwriting styles. As expected, the accuracy of the classifier decreased.  
+- Training Set Accuracy: 98.17%
+- Test Set Accuracy: 97.37%
+
+#### Linear Classifier: Comparing Accuracy for all Digit Combinations  
+Now, we compare which two digits are hardest and easiest to separate.  
+- Maximum Test Accuracy: 99.61% separating digits 6 and 7
+- Minimum Test Accuracy: 95.02% separating digits 3 and 5  
+
+These results were a little surprising, as we did not expect 3 and 5 to be the hardest to separate, since they have different curvatures. Regardless, the classifier still performed quite well when separating two digits. Next we will try separating all ten digits, and compare its performance to the two other supervised learning algorithms.  
+
+#### Linear Classifier Compared to SVM and Decision Tree  
+
+Using the Linear Classifier for separating all 10 digits performed worse than both of the other two algorithms. The results for the test data are as follows:  
+- SVM Accuracy: 98.02%
+- Decision Tree Accuracy: 87.40%
+- Linear Classifier: 86.69%  
+
+### Section 5: Conclusion
+There is a good amount of difference in the accuracy of each algorithm. We can first note that teh SVM grossly outperformed both the decision tree and the linear classifier. Considering the limitations of the other models, this makes some sense. The linear classifier struggles with higher dimensional data that is not in a Gaussian distribution. This is not always an assumption that can be made, indicating that the linear classifier may struggle with oddly distributed data. Also, there is the issue on dimensionality to tackle. The linear classifier is good and fast to use in lower dimensions, as we saw it was highly capable of separating 2 or 3 digits in the dataset. As we increase the dimensionality of the data, it becomes harder to separate the data using hyperplanes.  
+
+In the case of the MNIST dataset, SVMs are often able to achieve higher accuracy than decision trees because they are well-suited to handle high-dimensional data with a large number of features. Each pixel in the MNIST images represents a feature, so there are a total of 784 features. SVMs are designed to find the best possible boundary between the classes, and they can handle non-linearly separable data by using a kernel function.
+
+In contrast, decision trees may not perform as well on the MNIST dataset because they tend to work better with fewer features and may struggle to capture the complex relationships between the pixels in the images. Decision trees also tend to be more prone to overfitting, which can lead to poor generalization performance on new, unseen data. The MNIST dataset, with 784 features, is difficult for a decision tree to separate. 
+
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
+
+
+
+
 
