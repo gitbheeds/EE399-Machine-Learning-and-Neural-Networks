@@ -17,7 +17,7 @@ Storage for EE399 HW
   - [Conclusion](https://github.com/gitbheeds/EE399-Work#section-5-conclusion-1)
 - [HW3 Writeup: Classification of Digits in the MNIST_784 Dataset Using Several Supervised Machine Learning Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw3-writeup-classification-of-digits-in-the-mnist_784-dataset-using-several-supervised-machine-learning-algorithms)  
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-2)  
-  - Overview  
+  - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-2)  
   - Background and Important Concepts  
   - Development and Implementation of Functions and Algorithms  
   - Results  
