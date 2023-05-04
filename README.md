@@ -458,15 +458,34 @@ The comparison of the FFNN to the models from HW 1 can be seen here. An importan
  - Loss function from parabola fit  34.011683144193 
  - Loss function from polynomial fit  4027.9343692981083 
 
-##### Neural Net Results: 10000 Epochs, batch size 10
+#### Neural Net Results: 10000 Epochs, batch size 10
 
 - Training set 1 error =  29.525825250436466
 - Test set 1 error =  26.053422135278232
 - Training set 2 error =  237.00022363711562
-- Test set 2 error =  738.4990082935087
+- Test set 2 error =  738.4990082935087  
 
+#### Runtimes: 
+- FFNN: 
+  - Set 1: 1m 29.3s
+  - Set 2: 2m 42.9s
+- HW1 Models (Total runtime for all models)
+  - Set 1: Less than 1s
+  - Set 2: Less than 1s
 
+#### Part II: MNIST
 
+The classification accuracies and runtimes of the four different classifiers are as follows:
+
+- FFNN accuracy: 97.00%
+  - Runtime: 20.2s
+- LSTM accuracy: 98.56%
+  - Runtime: 2m 39.4s
+  - Note that this runtime includes reshaping the data, a mandatory step to use an LSTM
+- SVM accuracy: 97.92%
+  - Runtime: 5m 26s
+- Decision Tree accuracy: 87.54%
+  - Runtime: 16.8s   
 
 ### Section 5: Conclusion  
 
