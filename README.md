@@ -21,7 +21,14 @@ Storage for EE399 HW
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-2)  
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms-1)  
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-2)  
-  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-2)  
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-2)
+- HW4 Writeup: Training Neural Nets
+  - Abstract
+  - Overview
+  - Background and Important Concepts
+  - Development and Implementation of Algorithms
+  - Results
+  - Conclusion 
     
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
@@ -347,7 +354,12 @@ In the case of the MNIST dataset, SVMs are often able to achieve higher accuracy
 
 In contrast, decision trees may not perform as well on the MNIST dataset because they tend to work better with fewer features and may struggle to capture the complex relationships between the pixels in the images. Decision trees also tend to be more prone to overfitting, which can lead to poor generalization performance on new, unseen data. The MNIST dataset, with 784 features, is difficult for a decision tree to separate. 
 
-[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)  
+
+
+## HW 4: Training Neural Nets  
+
+
 
 
 
