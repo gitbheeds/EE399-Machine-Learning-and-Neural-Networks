@@ -430,9 +430,43 @@ The LSTM was also implemented similarly. Keras allows for a very quick implement
 ![LSTM implementation](https://user-images.githubusercontent.com/87102849/236319919-13261d0f-b208-406d-b13e-26b45001891e.png)
 
 
+### Section 4: Results
+
+The comparison of the FFNN to the models from HW 1 can be seen here. An important conclusion here is that it took the neural net 10,000 epochs to generate a loss function that outperformed only the polynomial fit on the first test dataset. Similar performance can be seen on the second dataset.  
+
+#### From HW1
+##### Training Data Set 1 Loss functions 
+- Loss function from line fit  2.242749387090776 
+- Loss function from parabola fit  2.2427493872531716 
+- Loss function from polynomial fit  0.028351970844281614 
+
+##### Test Data Set 1 Loss functions 
+
+ - Loss function from line fit  3.4392167768613793 
+ - Loss function from parabola fit  3.4391905006921237 
+ - Loss function from polynomial fit  30022321415.023407
+
+##### Training Data Set 2 Loss functions 
+
+ - Loss function from line fit  3.1615109544610585 
+ - Loss function from parabola fit  3.1636135157981684 
+ - Loss function from polynomial fit  34471695091300.21 
+
+##### Test Data Set 2 Loss functions 
+
+ - Loss function from line fit  33.573133901279796 
+ - Loss function from parabola fit  34.011683144193 
+ - Loss function from polynomial fit  4027.9343692981083 
+
+##### Neural Net Results: 10000 Epochs, batch size 10
+
+- Training set 1 error =  29.525825250436466
+- Test set 1 error =  26.053422135278232
+- Training set 2 error =  237.00022363711562
+- Test set 2 error =  738.4990082935087
 
 
-### Section 4: Results  
+
 
 ### Section 5: Conclusion  
 
