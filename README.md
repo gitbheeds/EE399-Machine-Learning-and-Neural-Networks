@@ -359,6 +359,27 @@ In contrast, decision trees may not perform as well on the MNIST dataset because
 
 ## HW 4: Training Neural Nets  
 
+### Abstract 
+
+In this assignment, we will be training a couple neural nets on datasets used in HW 1 and HW 3. Our goal is to analyze how a three layer feed forward neural net (FFNN) compares to the models used in the previous assignments. For the HW 1 dataset, we will compare the loss functions of the three layer FFNN to those of the line, parabola, and polynomial fit computed in the first assignment. This will help us understand how a neural net performs in low dimensionality problems. From there, we will train a similar FFNN on the MNIST_784 dataset used in HW 3. This dataset will test the FFNN's ability to handle much higher dimension problems. As we will see, the neural net does not provide the best results on the simpler, two dimensional data, but outperforms old industry standards in higher dimensions. 
+
+### Section 1: Overview
+
+This assignment can largely be broken into two parts. First, we will train a three layer FFNN on the same dataset from HW 1. Much like in that assignment, we will use two separate training and test data splits, and calculate the loss as a least squares error. We can then compare the results using the FFNN to the three models we had tested in HW 1.  
+
+The second part of this assignment involves the MNIST_784 dataset. We will compute the PCA of the data, and then train a three layer FFNN on the data to separate all 10 digits. We'll compare the accuracy of the FFNN to a different type of neural net, a Long Short Term Memory neural net, as well as the old standards, the Support Vector Machine and the Decision Tree. We can then spend some time comparing the accuracies of these results against the overall runtime of each process to determine where neural nets are the most optimal solution, and where the performance of the neural net is not worth the runtime and overall complexity. 
+
+### Section 2: Background and Important Concepts  
+
+
+
+### Section 3: Development and Implementation of Algorithms  
+
+### Section 4: Results  
+
+### Section 5: Conclusion  
+
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)  
 
 
 
