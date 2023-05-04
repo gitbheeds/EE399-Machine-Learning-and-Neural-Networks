@@ -22,9 +22,9 @@ Storage for EE399 HW
   - [Development and Implementation of Functions and Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms-1)  
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-2)  
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-2)
-- HW4 Writeup: Training Neural Nets
-  - Abstract
-  - Overview
+- [HW4 Writeup: Training Neural Nets](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw-4-training-neural-nets)
+  - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-3)
+  - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-3)
   - Background and Important Concepts
   - Development and Implementation of Algorithms
   - Results
