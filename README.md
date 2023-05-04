@@ -365,12 +365,48 @@ In this assignment, we will be training a couple neural nets on datasets used in
 
 ### Section 1: Overview
 
-This assignment can largely be broken into two parts. First, we will train a three layer FFNN on the same dataset from HW 1. Much like in that assignment, we will use two separate training and test data splits, and calculate the loss as a least squares error. We can then compare the results using the FFNN to the three models we had tested in HW 1.  
+This assignment can largely be broken into two parts. First, we will train a three layer FFNN on the same dataset from HW 1. Much like in that assignment, we will use two separate training and test data splits, and calculate the loss as a least squares error. The first training set will be the first 20 points of the data, and the remaining 10 points will comprise the test set. For the second training set, we will use the first and last 10 points of the data, and the middle 10 for the test set.  We can then compare the results using the FFNN to the three models we had tested in HW 1.  
 
-The second part of this assignment involves the MNIST_784 dataset. We will compute the PCA of the data, and then train a three layer FFNN on the data to separate all 10 digits. We'll compare the accuracy of the FFNN to a different type of neural net, a Long Short Term Memory neural net, as well as the old standards, the Support Vector Machine and the Decision Tree. We can then spend some time comparing the accuracies of these results against the overall runtime of each process to determine where neural nets are the most optimal solution, and where the performance of the neural net is not worth the runtime and overall complexity. 
+The second part of this assignment involves the MNIST_784 dataset. We will compute the PCA of the data, and then train a three layer FFNN on the data to separate all 10 digits. We'll compare the accuracy of the FFNN to a different type of neural net, a Long Short Term Memory Network, as well as the old standards, the Support Vector Machine and the Decision Tree. We can then spend some time comparing the accuracies of these results against the overall runtime of each process to determine where neural nets are the most optimal solution, and where the performance of the neural net is not worth the runtime and overall complexity. 
 
 ### Section 2: Background and Important Concepts  
 
+#### HW 1 Dataset
+The dataset from HW1 is a simple two-dimensional dataset with 30 total points. Below is an image of the dataset.  
+![HW1 dataset](https://user-images.githubusercontent.com/87102849/236311751-318820c4-a094-4790-a8f2-cd98aabdf7e3.png)
+
+#### MNIST_784
+The MNIST dataset is a dataset consisting of 70,000 greyscale images of handwritten digits from zero through nine. Each digit is labeled, and of resolution 28x28. The data is stored in a 70000 x 784 matrix, where each image's pixels is stored as each entry across the row. Each pixel is assigned a value from 0 to 255.0. To preproccess this data, we will do two things. First, we will normalize the data to a range of 0 to 1. Second, we will transpose the matrix so that each image is a column vector, with each entry down the column corresponding to a pixel in the image. This allows us to perform PCA on the data. 
+
+#### Least-Squares Error
+This is a common statistical technique to fit models to data. The least-squares error is defined as the 
+sum of the squared differences between predicted values of the model and the actual values of the data.
+Below is the Least-Squares Error equation: 
+![Least-Squares Error ](https://user-images.githubusercontent.com/80599571/230671996-23294fdf-f84c-4431-9348-834e1d268cfd.png)
+
+#### Loss Results of Models From HW 1
+For reference, the reported loss from the three models tested in HW 1 are provided here. We will again reference these in the results section.  
+![HW1 loss results](https://user-images.githubusercontent.com/87102849/236313647-10de1555-c712-4d1c-965a-3b11e543c9f3.png)
+
+
+#### Feed Forward Neural Net (FFNN)
+A feedforward neural network is a type of artificial neural network where the information flows in one direction, forward, from the input layer, through the hidden layers, and to the output layer. In a feedforward neural network, there are no feedback connections between the layers, which means that the output of one layer only depends on the input from the previous layer.
+
+The input layer receives the input data, which is usually a vector of numerical values. The hidden layers process this input and apply non-linear transformations to it. Each hidden layer is composed of a set of neurons or units, and each unit takes a weighted sum of the inputs and applies an activation function to the result. The weights and biases of the neurons are learned during the training phase using a process called backpropagation.
+
+The output layer produces the final output of the network, which could be a classification label, a numerical value, or a probability distribution over possible outputs. The output layer also applies an activation function to the output of the previous layer.
+
+#### Activation Functions (ReLU and Linear)
+Activation functions are a critical component of artificial neural networks, as they introduce non-linearity to the output of each neuron. In a neural network, activation functions are applied to the weighted sum of inputs of each neuron to introduce non-linearities in the output. Rectified Linear Unit (ReLU) and Linear activation functions are two commonly used activation functions in neural networks. These are the ones we will be using in our FFNNs. A ReLU activation function returns the input if it is positive and returns zero if it is negative. Mathematically, ReLU can be defined as `f(x) = max(0, x)`. This function is commonly used in hidden layers of neural networks because it allows the model to learn non-linear patterns in the data, while also being computationally efficient. A linear activation function returns the input as it is without any non-linear transformation. Mathematically, linear activation function can be defined as `f(x) = x`. This function is often used in the output layer of regression problems where the goal is to predict a continuous value.
+
+#### Long Short Term Memory Networks (LSTM)
+LSTMs are a type of recurrent neural network (RNN) that can process sequential data by preserving information over time. They are different from FFNNs in several ways.
+
+In a feedforward neural network, the information flows in one direction, from the input layer through the hidden layers to the output layer. However, in an LSTM, the information can flow in multiple directions, as the output of the current time step can affect the input of the next time step. This means that LSTM layers generate feedback which can further be used to strengthen the LSTM. LSTMs have a unique architecture that allows them to capture long-term dependencies in the input sequence. They use a special memory cell that can maintain information over time and gates that control the flow of information into and out of the memory cell. The gates are composed of sigmoid activation functions that can decide which information to keep, forget or update in the memory cell. The architecture of an LSTM allows it to handle vanishing and exploding gradients that can occur in RNNs when training on long sequences. The gates can control the amount of gradient that flows through the network, which can prevent the gradient from vanishing or exploding. This specialized memory architecture allows LSTMs to better preserve long-term dependencies in the input data.  
+
+#### Support Vector Machine (SVM)
+
+#### Decision Tree 
 
 
 ### Section 3: Development and Implementation of Algorithms  
