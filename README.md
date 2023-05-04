@@ -489,6 +489,16 @@ The classification accuracies and runtimes of the four different classifiers are
 
 ### Section 5: Conclusion  
 
+The results indicate some clear trends in the use of neural nets. First of all, it seems highly unnecessary to use a neural net for low dimension problems like 2D curve fitting. As we saw, the FFNN did not perform well on either train/test set. Even allowing it to train for 10,000 epochs did not increase its performance in a meaningful way. Instead, we saw incredibly long runtimes. In contrast, it took less than a second to run *all* of the 2D models and calculate their loss functions. From this perspective, we can argue that there is no good reason to use a neural net on a low dimension problem. 
+
+Now considering the MNIST dataset, we see something quite different. The FFNN and LSTM performed very well, and matched or even surpassed the accuracy of the SVM. In HW 3, we determined that the SVM was the best method we had at the time to separate the 10 digits in the MNIST dataset. With the introduction of neural nets, we see that this may no longer be the case.   
+
+First, let us consider the LSTM. It had an accuracy of 98.56%, beating out the SVM by roughly 1%. This isn't an astounding performance increase, but what's important here is the runtimes. Even accounting for the time it takes to reshape the data, the LSTM completed all calculations in roughly half the time that the SVM required. This alone is a good reason to consider the LSTM over a SVM for classifying high dimensionality data.  
+
+Next, we turn our attention to the FFNN. It had roughly the same accuracy as the SVM, but a blisteringly fast runtime, taking about 16.3% of the time for a less than 1% drop in accuracy. While it was not faster than the decision tree, it had a 10% higher accuracy, so it is the better choice between those two. The FFNN looks to be the fastest and most reasonably accurate method to classify large datasets that have high dimensionality.  
+
+In conclusion, neural nets are an incredibly powerful tool, but they shine the best with high dimensionality and complex classification requirements, outperforming all industry standards overall. 
+
 [Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)  
 
 
