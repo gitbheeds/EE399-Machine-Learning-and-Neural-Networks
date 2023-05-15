@@ -30,7 +30,7 @@ A repository containing work on ML/AI algorithms. Learning how to use ML/AI to a
   - [Development and Implementation of Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-algorithms-1)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-3)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-3)
-- HW5 Writeup: Forecasting Dynamics of the Lorenz Equation
+- [HW5 Writeup: Forecasting Dynamics of the Lorenz Equation] (https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw-5-forecasting-dynamics-of-the-lorenz-equation)
   - Abstract
   - Overview
   - Background and Important Concepts
