@@ -1,5 +1,6 @@
 # EE399-Work
-Storage for EE399 HW
+A repository containing work on ML/AI algorithms. Learning how to use ML/AI to approach various types of problems. 
+
 ## Table of Contents
 - [HW 1 Writeup: Curve Fitting with Least Square Error](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw1-writeup-curve-fitting-with-least-square-error)
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract)
@@ -28,7 +29,14 @@ Storage for EE399 HW
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-3)
   - [Development and Implementation of Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-algorithms-1)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-3)
-  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-3) 
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-3)
+- HW5 Writeup: Forecasting Dynamics of the Lorenz Equation
+  - Abstract
+  - Overview
+  - Background and Important Concepts
+  - Development and Implementation of ML Architectures and Other Functions
+  - Results
+  - Conclusions  
     
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
@@ -502,7 +510,30 @@ In conclusion, neural nets are an incredibly powerful tool, but they shine the b
 [Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)  
 
 
+## HW 5 Forecasting Dynamics of the Lorenz Equation
 
+### Abstract: 
 
+### Section 1: Overview
+
+### Section 2: Background and Important Concepts
+
+#### Activation functions
+
+#### Feed Forward Neural Net (FFNN)
+
+#### Long Short Term Memory Network (LSTM)
+
+#### Echo State Network (ESN)
+
+#### Recurrent Neural Network (RNN)
+
+### Section 3: Development and Implementation of ML Architectures and Other Functions
+
+### Section 4: Results
+
+### Section 5: Conclusion
+
+[Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents) 
 
 
