@@ -514,9 +514,13 @@ In conclusion, neural nets are an incredibly powerful tool, but they shine the b
 
 ### Abstract: 
 
+In this assignment, we analyze the Lorenz Equation using four different neural net architectures. Each of the four neural nets (Feed Forward, Long Short Term Memory, Echo-State, and Recurrent) are trained on a large set of data from the Lorenz Equation that is generated at different values of &rho;, a parameter that controls the chaos of the equation. Each net will then be tested on two different sets of Lorenz data for different values of &rho; than the training. 
+
 ### Section 1: Overview
 
 ### Section 2: Background and Important Concepts
+
+#### Lorenz Equation
 
 #### Activation functions
 
