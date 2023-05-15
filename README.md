@@ -34,7 +34,7 @@ A repository containing work on ML/AI algorithms. Learning how to use ML/AI to a
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-4)
   - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-4)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-4)
-  - Development and Implementation of ML Architectures and Other Functions
+  - [Development and Implementation of ML Architectures and Other Functions](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-ml-architectures-and-other-functions)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-4)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-4)  
     
