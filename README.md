@@ -30,7 +30,7 @@ A repository containing work on ML/AI algorithms. Learning how to use ML/AI to a
   - [Development and Implementation of Algorithms](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-algorithms-1)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-3)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-3)
-- [HW5 Writeup: Forecasting Dynamics of the Lorenz Equation](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw-5-forecasting-dynamics-of-the-lorenz-equation)
+- [HW5 Writeup: Forecasting Dynamics of the Lorenz Equation](https://github.com/gitbheeds/EE399-Work#hw-5-forecasting-dynamics-of-the-lorenz-equations)
   - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-4)
   - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-4)
   - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-4)
@@ -600,27 +600,29 @@ Unlike previous assignments, all the architectures were designed in pyTorch. Thi
 All NNs used ReLU activation functions where applicable.  
 
 FFNN initialization 
-# IMAGE
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/36083cf3-71ab-43d7-876e-4303d3ee16d7)  
 
 LSTM initialization  
-# IMAGE
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/aa8cca46-cae8-45ed-a2d6-d3682708fbd9)  
 
 ESN initialization  
-# IMAGE
-RNN initialization
-# IMAGE  
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/d7037959-cf63-4682-83e4-9039ec3046ad)  
+
+RNN initialization  
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/45648c81-90d8-446b-9d99-b54de645ef96)
+  
 
 The Lorenz Equations were implemented using `generate_lorenz_data(rho)`, where `rho` indicates the value of &rho; for that specific set.  
 
-# IMAGE  
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/96520193-46ae-4ed0-8eee-85b22b90b3fb)  
 
 Since multiple values of &rho; were required for training and test data, a function was designed to generate all training data, train the model, generate the testing data, and calculate losses in both cases. The function, `train_and_test_model(rho_train_values, rho_test_values)` is shown below.  
 
-# IMAGE  
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/595c822f-b967-4900-86d8-186a078e035c)  
 
 This function prints to the terminal regularly to track the progress of the NN. An example of this output is shown below.  
 
- # IMAGE
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/dd0c85a9-130f-4eaf-872c-19bb18eb04b9)  
 
 
 ### Section 4: Results
