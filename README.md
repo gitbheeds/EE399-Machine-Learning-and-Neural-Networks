@@ -510,33 +510,145 @@ In conclusion, neural nets are an incredibly powerful tool, but they shine the b
 [Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents)  
 
 
-## HW 5 Forecasting Dynamics of the Lorenz Equation
+## HW 5 Forecasting Dynamics of the Lorenz Equations
 
 ### Abstract: 
 
-In this assignment, we analyze the Lorenz Equation using four different neural net architectures. Each of the four neural nets (Feed Forward, Long Short Term Memory, Echo-State, and Recurrent) are trained on a large set of data from the Lorenz Equation that is generated at different values of &rho;, a parameter that controls the chaos of the equation. Each net will then be tested on two different sets of Lorenz data for different values of &rho; than the training. 
+In this assignment, we analyze the Lorenz Equations using four different neural net architectures. Each of the four neural nets (Feed Forward, Long Short Term Memory, Echo State, and Recurrent) are trained on a large set of data from the Lorenz Equations that is generated at different values of &rho;, a parameter that controls the chaos of the equation. Each net will then be tested on two different sets of Lorenz data for different values of &rho; than the training. While the neural nets perform slightly differently each time, we see that all of them struggle to forecast the dynamics of the Lorenz Equations, except the Long Short Term Memory and the Echo State networks. 
 
 ### Section 1: Overview
 
+In this assignment, we will train various neural nets to advance the solution of the Lorenz Equation from t to t + &Delta;t for &rho; = 10, 28, and 40. The training data will consist of the concatenation of the outputs for all &rho; values. Each neural net will then be tested on its ability to forecast future states of the Lorenz Equations for first &rho; = 17 and then &rho; = 35. We will analyze the results using Mean-Square Error as our loss function.
+
 ### Section 2: Background and Important Concepts
 
-#### Lorenz Equation
 
-#### Activation functions
+#### Lorenz Equations
+
+The Lorenz equations are a set of three non-linear differential equations that were first studied by the meteorologist Edward Lorenz in 1963. These equations are widely known for their chaotic behavior and have become a classic example in the field of chaos theory. They were originally derived as a simplified model for atmospheric convection, but they have found applications in various fields, including physics, mathematics, and engineering.
+
+The Lorenz equations describe the evolution of a three-dimensional dynamical system. The variables involved in the equations represent the state of the system at any given time. The equations themselves are as follows:  
+
+$\frac{{dx}}{{dt}} = \sigma(y - x)$
+
+$\frac{{dy}}{{dt}} = x(\rho - z) - y$
+
+$\frac{{dz}}{{dt}} = xy - \beta z$
+
+The parameters of the Lorenz Equations are explained below.
+σ (Sigma): This parameter represents the Prandtl number, which measures the ratio of momentum diffusivity to thermal diffusivity. It determines the rate at which temperature differences are smoothed out by conduction. Increasing σ leads to more efficient mixing and stabilizes the system. If σ is very low, the system can become periodic or even converge to a stable fixed point. On the other hand, high values of σ can result in chaotic behavior.
+
+ρ (Rho): This parameter represents the Rayleigh number, which measures the ratio of the strength of buoyancy forces to viscous forces. It determines the tendency of the system to exhibit convection or circulation. Increasing ρ leads to more vigorous convection and increases the complexity of the system. At low values of ρ, the system can be stable with simple periodic behavior. As ρ increases beyond a critical value, the system becomes chaotic. This critical value is around 28. 
+
+β (Beta): This parameter represents the ratio of the width to the height of the convection cell. It affects the stability and symmetry of the system. Changes in β do not significantly alter the dynamics of the system, but they can affect the shape and structure of the attractor.
+
+It's important to note that the Lorenz equations are highly sensitive to initial conditions. Even small changes in the initial values of x, y, and z can lead to drastically different trajectories. This sensitivity to initial conditions is one of the defining characteristics of chaotic systems.  
+
+As mentioned in the overview, we will only manipulate the value of &rho; to influence the chaos of the system, and not change initial values of x, y, z, &Beta;, or &sigma;.
+
+#### Activation Functions
+Activation functions are a critical component of artificial neural networks, as they introduce non-linearity to the output of each neuron. In a neural network, activation functions are applied to the weighted sum of inputs of each neuron to introduce non-linearities in the output. Rectified Linear Unit (ReLU) and Linear activation functions are two commonly used activation functions in neural networks. These are the ones we will be using in our FFNNs. A ReLU activation function returns the input if it is positive and returns zero if it is negative. Mathematically, ReLU can be defined as `f(x) = max(0, x)`. This function is commonly used in hidden layers of neural networks because it allows the model to learn non-linear patterns in the data, while also being computationally efficient. A linear activation function returns the input as it is without any non-linear transformation. Mathematically, linear activation function can be defined as `f(x) = x`. This function is often used in the output layer of regression problems where the goal is to predict a continuous value.  
+
+In this assignment, we regularly use ReLU activation for all layers excluding the output layer, which has a linear activation function. 
+
+#### Loss Function
+Loss functions are an important way to classify the performance of a neural net. Using a defined loss function, we are able to determine how accurate a neural net was able to solve the problem it was given. Most commonly, neural nets are configured with a Mean-Square Error loss function, and that is what we will be using in this assignment. 
 
 #### Feed Forward Neural Net (FFNN)
 
-#### Long Short Term Memory Network (LSTM)
+A feedforward neural network is a type of artificial neural network where the information flows in one direction, forward, from the input layer, through the hidden layers, and to the output layer. In a feedforward neural network, there are no feedback connections between the layers, which means that the output of one layer only depends on the input from the previous layer.
 
-#### Echo State Network (ESN)
+The input layer receives the input data, which is usually a vector of numerical values. The hidden layers process this input and apply non-linear transformations to it. Each hidden layer is composed of a set of neurons or units, and each unit takes a weighted sum of the inputs and applies an activation function to the result. The weights and biases of the neurons are learned during the training phase using a process called backpropagation.
+
+The output layer produces the final output of the network, which could be a classification label, a numerical value, or a probability distribution over possible outputs. The output layer also applies an activation function to the output of the previous layer.
+
+In this assignment, our FFNN will be three layers deep, consisting of 3 neurons, 64 neurons, and 3 neurons. 
 
 #### Recurrent Neural Network (RNN)
+A Recurrent Neural Network (RNN) is a type of neural network specifically designed to process sequential or time-dependent data. Unlike feedforward neural networks, where information flows only in one direction, RNNs introduce loops within the network, allowing information to persist and be passed from one step to another.
+
+The core idea behind an RNN is that it maintains an internal hidden state that serves as a form of memory. At each time step, the RNN takes an input and combines it with the hidden state from the previous step to produce an output and update the current hidden state. This process enables the network to capture and leverage temporal dependencies in the data.
+
+In terms of architecture, an RNN typically consists of three main components: an input layer, a hidden layer (also known as the recurrent layer), and an output layer. The hidden layer is responsible for maintaining the internal state and processing sequential information. The input and output layers connect to the hidden layer, enabling the network to receive input data and produce predictions or outputs.
+
+Training an RNN involves optimizing its parameters to minimize the discrepancy between the predicted outputs and the ground truth. This is achieved through a process called backpropagation through time (BPTT), which is an extension of the standard backpropagation algorithm used in feedforward neural networks. BPTT calculates the gradients by unfolding the recurrent structure of the network over time and propagating the errors backward through the unfolded structure.
+
+RNNs find applications in various domains, including natural language processing (e.g., language modeling, machine translation), speech recognition, handwriting recognition, and music generation. Their ability to model sequential information makes them well-suited for tasks where the order of the input data matters and where context and dependencies play a crucial role.
+
+However, RNNs can suffer from challenges like the vanishing or exploding gradient problem, which occurs when gradients either diminish or grow exponentially over time, making it difficult to capture long-term dependencies. 
+
+
+#### Long Short Term Memory Network (LSTM)
+LSTMs are a type of recurrent neural network (RNN) that can process sequential data by preserving information over time. They are different from FFNNs in several ways.
+
+In a feedforward neural network, the information flows in one direction, from the input layer through the hidden layers to the output layer. However, in an LSTM, the information can flow in multiple directions, as the output of the current time step can affect the input of the next time step. This means that LSTM layers generate feedback which can further be used to strengthen the LSTM. LSTMs have a unique architecture that allows them to capture long-term dependencies in the input sequence. They use a special memory cell that can maintain information over time and gates that control the flow of information into and out of the memory cell. The gates are composed of sigmoid activation functions that can decide which information to keep, forget or update in the memory cell. The architecture of an LSTM allows it to handle vanishing and exploding gradients that can occur in RNNs when training on long sequences. The gates can control the amount of gradient that flows through the network, which can prevent the gradient from vanishing or exploding. This specialized memory architecture allows LSTMs to better preserve long-term dependencies in the input data.  
+
+#### Echo State Network (ESN)
+An Echo State Network (ESN) is a type of recurrent neural network (RNN) that is designed to efficiently process temporal data. It was introduced as a simplified approach to training recurrent neural networks, addressing some of the challenges associated with training traditional RNNs.
+
+The key characteristic that sets ESNs apart from other RNNs is the concept of an "echo state." An echo state refers to a fixed internal reservoir of recurrently connected nodes, which is randomly initialized and remains untrained throughout the learning process. The input data is fed into this reservoir, and the reservoir's dynamics generate a high-dimensional representation of the input sequence. The reservoir essentially acts as a dynamic memory that captures the temporal dependencies in the input data.
+
+The output of an ESN is computed by applying a linear transformation to the reservoir's states. This transformation is learned through a simple training procedure, typically employing linear regression or another shallow learning algorithm. The fixed, untrained nature of the reservoir helps overcome the vanishing/exploding gradient problem that often hinders the training of traditional RNNs.
+
+ESNs have been successfully applied to various time series prediction tasks, such as speech recognition, weather forecasting, and financial market analysis. Their simplicity and computational efficiency make them particularly suitable for real-time applications, where quick and accurate predictions are crucial. Additionally, ESNs have shown good generalization capabilities, even with limited training data, making them useful in scenarios with limited labeled examples.
+
+Overall, the key advantages of ESNs include their easy training procedure, ability to handle complex temporal patterns, and robustness to noise and input variations. However, they may not be as effective as more complex RNN architectures for tasks requiring fine-grained control or precise sequence generation, as their predictions heavily rely on the reservoir dynamics.
 
 ### Section 3: Development and Implementation of ML Architectures and Other Functions
 
+Unlike previous assignments, all the architectures were designed in pyTorch. This was mainly for exposure using a different library.  
+All NNs used ReLU activation functions where applicable.  
+
+FFNN initialization 
+# IMAGE
+
+LSTM initialization  
+# IMAGE
+
+ESN initialization  
+# IMAGE
+RNN initialization
+# IMAGE  
+
+The Lorenz Equations were implemented using `generate_lorenz_data(rho)`, where `rho` indicates the value of &rho; for that specific set.  
+
+# IMAGE  
+
+Since multiple values of &rho; were required for training and test data, a function was designed to generate all training data, train the model, generate the testing data, and calculate losses in both cases. The function, `train_and_test_model(rho_train_values, rho_test_values)` is shown below.  
+
+# IMAGE  
+
+This function prints to the terminal regularly to track the progress of the NN. An example of this output is shown below.  
+
+ # IMAGE
+
+
 ### Section 4: Results
 
+After training and testing all the neural nets, we can determine the following order for performance. These numbers were taken from one run through all models, please note that loss results may differ each run of the NN due to the base randomness associated with a neural net. However, the overall performance rankings should be similar. 
+
+1. ESN
+  - &rho; = 17, loss of 24.25
+  - &rho; = 35, loss of 73.16
+
+2. LSTM
+  - &rho; = 17, loss of 63.17
+  - &rho; = 35, loss of 128.31
+
+3. RNN
+  - &rho; = 17, loss of 65.30
+  - &rho; = 35, loss of 131.10
+
+4. FFNN
+  - &rho; = 17, loss of 113.07
+  - &rho; = 35, loss of 428.52
+
 ### Section 5: Conclusion
+
+In conclusion, we find that the ESN is best at forecasting the dynamics of the Lorenz equations. It's important to note though, that the losses associated with each &rho; value are still high, indicating the difficult in predicting the chaos of the Lorenz equations. We will start our analysis of the results by first considering the effects of &rho; on the system. To put it simply, &rho; affects the chaos of the system. Under the critical value of &rho; = 28, the system is relatively periodic, and thus can be predicted more accurately. Above the critical value, the system becomes incredibly chaotic and much harder to predict. Looking at our results, this checks out. Each neural net performed significantly worse when &rho; = 35. As this is above the critical threshold, it makes sense that the neural nets would struggle to predict this system effectively. Looking at the less chaotic test set, &rho; = 17, we see loss that is relatively lower than that of the other test set, but it is still relatively high compared to losses we have measured in other problems in past assignments. This is most likely because the neural nets have been trained on both stable and incredibly chaotic systems. This would likely decrease the model's ability to correctly predict low chaos systems.  
+
+Now we turn our attention to the types of neural nets used, and why this ranking is feasible for them. First, we note that this system is time-dependent, and thus the data generated for them is time series data. Right off the bat, we can agree that the FFNN would perform the worst, as it is the only neural net we use that does not have a memory system, and therefore will struggle with time series data. The LSTM and ESN are both more advanced versions of the simpler RNN that were designed to combat some of the RNN's limitations. Standard RNNs suffer from the vanishing gradient problem, which makes it difficult for them to capture and propagate information over long sequences. LSTMs were specifically designed to alleviate this issue by incorporating memory cells and gating mechanisms. The LSTM's architecture allows it to selectively retain and update information over time, enabling it to capture long-term dependencies more effectively than a standard RNN. LSTMs and ESNs have more memory than RNNs by design, allowing them to handle complex long term dependencies better than their predecessor. When comparing why the ESN would outperform the LSTM, we first consider that the ESN has a simpler architecture and training procedure than the LSTM. Less computational demand allows ESNs to more efficiently process long datasets. ESNs require fewer parameters, decrease the amount of tuning required. ESNs have been shown to exhibit good robustness to noise and disturbances in the input data. The random initialization of the reservoir layer helps create a diverse set of echo states, which can help in capturing and representing noisy or corrupted input patterns. LSTMs, while generally robust, may require more careful tuning and regularization techniques to handle noisy inputs effectively. This robustness to noise may also help it handle chaotic input data more accurately. 
+
 
 [Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents) 
 
