@@ -599,7 +599,7 @@ Overall, the key advantages of ESNs include their easy training procedure, abili
 Unlike previous assignments, all the architectures were designed in pyTorch. This was mainly for exposure using a different library.  
 All NNs used ReLU activation functions where applicable.  
 
-FFNN initialization 
+FFNN initialization  
 ![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/36083cf3-71ab-43d7-876e-4303d3ee16d7)  
 
 LSTM initialization  
