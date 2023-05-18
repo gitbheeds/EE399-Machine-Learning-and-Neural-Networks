@@ -37,7 +37,13 @@ A repository containing work on ML/AI algorithms. Learning how to use ML/AI to a
   - [Development and Implementation of ML Architectures and Other Functions](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-ml-architectures-and-other-functions)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-4)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-4)  
-    
+- HW6 Writeup: Analysis of Sea Temperature Data Using PyShred
+  - Abstract
+  - Overview 
+  - Background and Important Concepts
+  - Development and Implementation
+  - Results
+  - Conclusion 
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
 ### Abstract:
@@ -655,3 +661,34 @@ Now we turn our attention to the types of neural nets used, and why this ranking
 [Back to Table of Contents](https://github.com/gitbheeds/EE399-Work#table-of-contents) 
 
 
+## HW6 Writeup: Analysis of Sea Temperature Data Using PyShred
+
+### Abstract
+
+### Section 1: Overview
+
+### Section 2: Background and Important Concepts
+
+#### SHRED
+
+##### LSTM 
+
+##### Decoder
+
+#### Gaussian Noise
+
+### Section 3: Development and Implementation of Algorithms
+
+#### PyShred
+
+#### Noise Generation
+
+### Section 4: Results
+
+#### Performance vs Time Lag
+
+#### Performance vs Noise
+
+#### Performance vs Number of Sensors
+
+### Conclusion
