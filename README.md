@@ -37,13 +37,13 @@ A repository containing work on ML/AI algorithms. Learning how to use ML/AI to a
   - [Development and Implementation of ML Architectures and Other Functions](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-ml-architectures-and-other-functions)
   - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-4)
   - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-4)  
-- HW6 Writeup: Analysis of Sea Temperature Data Using PyShred
-  - Abstract
-  - Overview 
-  - Background and Important Concepts
-  - Development and Implementation
-  - Results
-  - Conclusion 
+- [HW6 Writeup: Analysis of Sea Temperature Data Using PyShred] (https://github.com/gitbheeds/EE399-Work/blob/main/README.md#hw6-writeup-analysis-of-sea-temperature-data-using-pyshred)
+  - [Abstract](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#abstract-5)
+  - [Overview](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-1-overview-5)
+  - [Background and Important Concepts](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-2-background-and-important-concepts-5)
+  - [Development and Implementation of ML Architectures and Other Functions](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-3-development-and-implementation-of-functions-and-algorithms-2)
+  - [Results](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-4-results-5)
+  - [Conclusion](https://github.com/gitbheeds/EE399-Work/blob/main/README.md#section-5-conclusion-5)  
 ## HW1 Writeup: Curve Fitting with Least Square Error
 
 ### Abstract:
