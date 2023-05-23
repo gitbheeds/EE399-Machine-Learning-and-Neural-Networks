@@ -664,31 +664,47 @@ Now we turn our attention to the types of neural nets used, and why this ranking
 ## HW6 Writeup: Analysis of Sea Temperature Data Using PyShred
 
 ### Abstract
-
+This assignment takes the pySHRED repository published by Jan P. Williams, Olivia Zahn, and J. Nathan Kutz, and uses the Shallow Recurrent Decoder (SHRED) to map trajectories of sensor measurements into higher dimensions. We will assess the performace of the model as a function of two of its internal parameters, and then as a function of noise. 
 ### Section 1: Overview
+In this assignment, first we will vary the time lag of the data from 52 to 100 and compute the performance as a function of time lag. The number of sensors will be kept at 3, as is provided in the example code. Then, we will keep the lag constant at 52 (the original value provided in the example code) and vary the number of sensors from 1 to 25, and plot the performance as a function of the number of sensors. Finally we will add Gaussian noise to the data at varying scale, and measure the SHRED's resistance to noise by measuring its performance. 
 
 ### Section 2: Background and Important Concepts
 
-#### SHRED
+#### [pySHRED] (https://github.com/Jan-Williams/pyshred)
+This repository contains the code for the paper "Sensing with shallow recurrent decoder networks" by Jan P. Williams, Olivia Zahn, and J. Nathan Kutz. SHallow REcurrent Decoders (SHRED) are models that learn a mapping from trajectories of sensor measurements to a high-dimensional, spatio-temporal state. For this task we used the preprocessing, training, testing and evaluation schemes from `example.ipynb`. The datasets considered in the paper "Sensing with shallow recurrent decoder networks" consist of sea-surface temperature (SST), a forced turbulent flow, and atmospheric ozone concentration. Cloning this repo will download the SST data used. Details for accessing the other datasets can be found in the supplement to the paper. For this assignment we will be looking at the SST data. 
 
 ##### LSTM 
+LSTMs are a type of recurrent neural network (RNN) that can process sequential data by preserving information over time.
 
-##### Decoder
+In an LSTM, the information can flow in multiple directions, as the output of the current time step can affect the input of the next time step. This means that LSTM layers generate feedback which can further be used to strengthen the LSTM. LSTMs have a unique architecture that allows them to capture long-term dependencies in the input sequence. They use a special memory cell that can maintain information over time and gates that control the flow of information into and out of the memory cell. The gates are composed of sigmoid activation functions that can decide which information to keep, forget or update in the memory cell. The architecture of an LSTM allows it to handle vanishing and exploding gradients that can occur in RNNs when training on long sequences. The gates can control the amount of gradient that flows through the network, which can prevent the gradient from vanishing or exploding. This specialized memory architecture allows LSTMs to better preserve long-term dependencies in the input data.  
+
+##### Shallow Recurrent Decoder (SHRED) 
+A shallow recurrent decoder refers to a type of decoder architecture that consists of a single layer of recurrent units. Recurrent units, such as Long Short-Term Memory (LSTM) or Gated Recurrent Unit (GRU), are specialized types of neural network layers that can capture and process sequential information effectively. In a shallow recurrent decoder, the recurrent units receive input from the encoded representation (latent space) and generate the output sequence or reconstruction. The output at each time step is fed back into the recurrent units as input for the next time step, allowing the decoder to capture dependencies and context within the sequence. Compared to deeper recurrent decoder architectures, shallow recurrent decoders have fewer layers and, consequently, fewer parameters. They are often used when the task at hand does not require a complex modeling of long-term dependencies. Shallow decoders are computationally lighter and faster to train, making them suitable for simpler sequence-to-sequence tasks. However, shallow recurrent decoders may struggle to capture complex patterns and dependencies present in the input sequence. Deeper architectures with multiple layers of recurrent units can potentially learn more intricate representations and better model long-range dependencies.
 
 #### Gaussian Noise
+Gaussian noise, also known as Gaussian distribution or white noise, is a type of random variation that follows a Gaussian or normal distribution. It is characterized by its probability density function, which forms a symmetric bell-shaped curve. Gaussian noise is often used in various fields of science and engineering to model random disturbances or errors in data. It is commonly added to signals or datasets to simulate real-world variability or to regularize models during training by adding stochasticity to the learning process.
 
 ### Section 3: Development and Implementation of Algorithms
 
 #### PyShred
+The pySHRED repo can be found [here](https://github.com/Jan-Williams/pyshred). We use the methods found in `example.ipynb` to load and process data, as well as train the models. The methods in `example.ipynb` are placed in a for loop and iterated through to generate performance data for different input parameters. An example is shown below.  
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/e486bd46-86d9-4b16-80e9-d87d34bb6a24)
 
 #### Noise Generation
+Noise was generated using the `np.random.normal()` function from numpy. Noise was added using a Gaussian distribution, and scaled by `level`, which iterated between 0.0 and 1.0 in 25 equal steps. The image below shows the implementation.  
+
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/addc194f-d86c-4aa4-949f-0716d336d13c)
 
 ### Section 4: Results
 
 #### Performance vs Time Lag
-
-#### Performance vs Noise
-
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/45aa721e-2681-415e-b39a-a37804ba85d9)
 #### Performance vs Number of Sensors
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/31611950-d064-4ed7-b13c-eb98678c67d7)
+#### Performance vs Noise
+![image](https://github.com/gitbheeds/EE399-Work/assets/87102849/3b59c408-c759-492a-8300-eb4d13716d94)
+
 
 ### Conclusion
+
+As we analyze our results, a few things can be noticed. First and foremost, the SHRED has an incredibly high immunity to noise. The maximum loss when varying the noise was only 0.07, disregarding a large spike at 0.5 level. We also note that the more sensors the system has, the better it performs overall. This makes sense, as having more data from various locations in the sea can only improve the robustness of predictions. The performance compared to time lag was scattered at best, and didn't particularly follow any trends. Overall though, the performance was very good, reporting only about 0.0355 for the mean square error on average. 
